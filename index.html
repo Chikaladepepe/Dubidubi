@@ -16,7 +16,7 @@
             --peach: #fff5eb;
             --text-color: #4a4a4a;
             --accent: #ff85a2;
-            --matcha: #9ebf8b;
+            --matcha-green: #9ebf8b;
         }
 
         * {
@@ -30,13 +30,12 @@
             font-family: 'Inter', sans-serif;
             color: var(--text-color);
             scroll-behavior: smooth;
-            overflow: hidden; /* Prevent scrolling until unlocked */
+            overflow: hidden; 
         }
 
-        /* Scroll Snap Container */
         .container {
             height: 100vh;
-            overflow-y: scroll;
+            overflow-y: hidden; 
             scroll-snap-type: y mandatory;
         }
 
@@ -53,14 +52,11 @@
             position: relative;
         }
 
-        /* Section Backgrounds */
-        .intro { background-color: var(--cream); }
-        .remind { background-color: var(--cream); }
+        .intro, .remind { background-color: var(--cream); }
         .heart { background-color: var(--lavender); }
         .beauty { background-color: var(--rose); }
         .flowers { background-color: var(--peach); }
 
-        /* Content Styling */
         h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
@@ -74,19 +70,16 @@
             font-weight: 300;
         }
 
-        .highlight {
-            color: var(--accent);
-            font-weight: 600;
-        }
+        .highlight { color: var(--accent); font-weight: 600; }
 
         .gif-placeholder {
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             margin-bottom: 30px;
-            border-radius: 20px;
+            border-radius: 25px;
+            object-fit: cover;
         }
 
-        /* Button Styling */
         .open-btn {
             background-color: var(--accent);
             color: white;
@@ -96,32 +89,30 @@
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: 0.3s;
             box-shadow: 0 10px 20px rgba(255, 133, 162, 0.3);
         }
 
-        .open-btn:hover { transform: scale(1.05); }
-
-        /* Final Stage Decorations */
-        .matcha-cup {
-            position: absolute;
-            bottom: 50px;
-            right: 50px;
-            width: 80px;
+        /* The Gift Pair (Flowers + Matcha) */
+        .gift-container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
             animation: float 3s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-10px); }
         }
 
-        /* Falling Petals */
         .petal {
             position: absolute;
             background-color: var(--accent);
             border-radius: 150% 0 150% 0;
-            opacity: 0.3;
+            opacity: 0.4;
             pointer-events: none;
             animation: fall linear infinite;
         }
@@ -145,9 +136,8 @@
     <div class="container" id="mainContainer">
         
         <!-- PAGE 1: INTRO -->
-        <section class="intro" id="page1">
-            <!-- Replace the src with your cat gif link -->
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHY5bTlkYjV5bmx1eXptZHFoZ3B4Y2R4dzR4Y2Z4dzR4Y2Z4dzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/mlvseq9yvZhba/giphy.gif" class="gif-placeholder" alt="Cat Waving">
+        <section class="intro">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjZqcnZ5bmx1eXptZHFoZ3B4Y2R4dzR4Y2Z4dzR4Y2Z4dzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/MDJ9IbMvLUWd2/giphy.gif" class="gif-placeholder">
             <h1>Hello beautiful</h1>
             <p>Made a letter for you. Check it out!</p>
             <br>
@@ -156,47 +146,46 @@
 
         <!-- PAGE 2: THE REMINDER -->
         <section class="remind">
-            <img src="https://giphy.com/gifs/cat-dance-brown-ambush-rasel-gazi-TjSPQgowhhJdHgvnwA" class="gif-placeholder">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnB4bmxidm16bmxueXptZHFoZ3B4Y2R4dzR4Y2Z4dzR4Y2Z4dzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/ICOgUNoMPvGCI/giphy.gif" class="gif-placeholder">
             <p>I made this for you because you deserve to be reminded of how special you are no matter what day it is. It does not matter if there is a special occasion or none at all because you deserve this kind of energy every single day.</p>
         </section>
 
         <!-- PAGE 3: THE HEART -->
         <section class="heart">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnB4bmxidm16bmxueXptZHFoZ3B4Y2R4dzR4Y2Z4dzR4Y2Z4dzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/C9x0nrDQ74BXLYId6W/giphy.gif" class="gif-placeholder">
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjZqcnZ5bmx1eXptZHFoZ3B4Y2R4dzR4Y2Z4dzR4Y2Z4dzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/unQ3IJU2RG7PEPN9qh/giphy.gif" class="gif-placeholder">
             <p>Your personality is so rare and it is the best part of my day when we talk. I hope you do not get tired of me since I know I can be a lot to handle. Sometimes I do not want to talk and sometimes I have a hard time expressing how I feel but please know I will try to be better. Just bear with me and stay by my side.</p>
         </section>
 
         <!-- PAGE 4: BEAUTY -->
         <section class="beauty">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHB4bmxidm16bmxueXptZHFoZ3B4Y2R4dzR4Y2Z4dzR4Y2Z4dzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/KztT2c4u8mYYUiMKdJ/giphy.gif" class="gif-placeholder">
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjZqcnZ5bmx1eXptZHFoZ3B4Y2R4dzR4Y2Z4dzR4Y2Z4dzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/uw0KpagtwEJtC/giphy.gif" class="gif-placeholder">
             <p>Beyond that I hope you know just how <span class="highlight">breathtaking</span> you really are. I find myself caught up in how beautiful you look every single time I see you and I wanted to make sure you never forget that.</p>
         </section>
 
-        <!-- PAGE 5: FLOWERS & LDR -->
+        <!-- PAGE 5: FLOWERS + MATCHA -->
         <section class="flowers">
-            <!-- Falling Petals Container -->
             <div id="petalContainer"></div>
 
-            <!-- Matcha Cup SVG -->
-            <div class="matcha-cup">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M30 40 L70 40 L65 80 C65 85 35 85 35 80 Z" fill="#9ebf8b" />
-                    <path d="M30 40 Q50 35 70 40" fill="none" stroke="#7a9e66" stroke-width="2" />
-                    <rect x="48" y="20" width="4" height="20" fill="#fff" />
-                    <path d="M35 80 Q50 85 65 80" fill="none" stroke="#7a9e66" stroke-width="1" />
-                </svg>
+            <div class="gift-pair-wrapper">
+                <div class="gift-container">
+                    <!-- Flower Bouquet -->
+                    <svg width="100" height="100" viewBox="0 0 100 100">
+                        <circle cx="50" cy="40" r="12" fill="#ff85a2" />
+                        <circle cx="38" cy="48" r="12" fill="#ffb3c1" />
+                        <circle cx="62" cy="48" r="12" fill="#ffb3c1" />
+                        <circle cx="50" cy="58" r="12" fill="#ff85a2" />
+                        <rect x="49" y="70" width="3" height="25" fill="#7a9e66" />
+                    </svg>
+                    <!-- Matcha Cup -->
+                    <svg width="70" height="70" viewBox="0 0 100 100">
+                        <path d="M30 40 L70 40 L65 80 C65 85 35 85 35 80 Z" fill="#9ebf8b" />
+                        <path d="M30 40 Q50 35 70 40" fill="none" stroke="#7a9e66" stroke-width="2" />
+                        <rect x="48" y="22" width="3" height="18" fill="#fff" transform="rotate(10 50 30)"/>
+                    </svg>
+                </div>
             </div>
 
-            <!-- Flower Bouquet SVG -->
-            <svg width="150" height="150" viewBox="0 0 100 100" style="margin-bottom: 20px;">
-                <circle cx="50" cy="40" r="15" fill="#ff85a2" />
-                <circle cx="35" cy="50" r="15" fill="#ffb3c1" />
-                <circle cx="65" cy="50" r="15" fill="#ffb3c1" />
-                <circle cx="50" cy="60" r="15" fill="#ff85a2" />
-                <rect x="48" y="70" width="4" height="30" fill="#7a9e66" />
-            </svg>
-
-            <p>Since we are miles apart right now these virtual flowers are the best I can give for the time being. One day soon I hope to hand you a real bouquet in person. Until that day comes I hope these show you how much you mean to me. I love you so much.</p>
+            <p>Since we are miles apart right now these virtual flowers and this matcha are the best I can give for the time being. One day soon I hope to hand you a real bouquet in person. Until that day comes I hope these show you how much you mean to me. I love you so much.</p>
             
             <div class="signature">— Julian Cute</div>
         </section>
@@ -205,39 +194,37 @@
 
     <script>
         function unlock() {
-            // Explode Confetti
             confetti({
                 particleCount: 150,
                 spread: 70,
                 origin: { y: 0.6 },
-                colors: ['#ff85a2', '#f3efff', '#9ebf8b']
+                colors: ['#ff85a2', '#fdfaf5', '#9ebf8b']
             });
 
-            // Allow Scrolling
-            document.getElementById('mainContainer').style.overflowY = 'scroll';
+            const container = document.getElementById('mainContainer');
+            container.style.overflowY = 'scroll';
             
-            // Auto scroll to next section
+            createPetals();
+
             setTimeout(() => {
                 document.querySelector('.remind').scrollIntoView({ behavior: 'smooth' });
-            }, 500);
-
-            createPetals();
+            }, 600);
         }
 
-        // Falling Petals Effect
         function createPetals() {
             const container = document.getElementById('petalContainer');
-            for (let i = 0; i < 30; i++) {
+            if (container.children.length > 0) return;
+            for (let i = 0; i < 25; i++) {
                 let petal = document.createElement('div');
                 petal.className = 'petal';
                 petal.style.left = Math.random() * 100 + 'vw';
-                petal.style.width = Math.random() * 15 + 10 + 'px';
+                petal.style.width = Math.random() * 15 + 8 + 'px';
                 petal.style.height = petal.style.width;
-                petal.style.animationDuration = Math.random() * 3 + 2 + 's';
-                petal.style.animationDelay = Math.random() * 5 + 's';
+                petal.style.animationDuration = Math.random() * 3 + 3 + 's';
+                petal.style.animationDelay = Math.random() * 2 + 's';
                 container.appendChild(petal);
             }
         }
     </script>
 </body>
-  </html>
+</html> 
